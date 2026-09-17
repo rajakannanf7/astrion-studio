@@ -1,0 +1,10 @@
+node_modules/
+.vercel/
+
+# UI/UX Pro Max skill package — tooling, not site source.
+# Reinstall with: uipro init --ai claude
+.claude/skills/
+
+.DS_Store
+Thumbs.db
+*.log

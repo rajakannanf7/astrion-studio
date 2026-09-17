@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astrion Studio — Cyclorama Studio &amp; Podcast Rooms in Surandai</title>
+<meta name="description" content="A 1,600 sq ft cyclorama studio and two podcast rooms for hire in Surandai, Tamil Nadu. Book by the hour — lighting, backdrops and mics included.">
+<meta name="theme-color" content="#000000">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Astrion Studio — Cyclorama Studio &amp; Podcast Rooms in Surandai">
+<meta property="og:description" content="A 1,600 sq ft cyc wall and two podcast rooms, by the hour. Surandai, Tamil Nadu.">
+<meta property="og:image" content="assets/img/hero-cyclorama.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600&text=ASTRIONUD&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" as="image" href="assets/img/hero-cyclorama.jpg" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 128'%3E%3Crect width='140' height='128' fill='%23000'/%3E%3Cpath d='M10 114 L78 14 L130 14 L130 114 L104 114 L104 44 L40 114 Z' fill='%23F9A31B'/%3E%3C/svg%3E">
+</head>
+<body class="antialiased">
+
+<a href="#spaces" class="skip-link">Skip to content</a>
+
+<!-- Scroll progress indicator -->
+<div class="fixed inset-x-0 top-0 z-[60] h-0.5 bg-transparent" aria-hidden="true">
+  <div id="progress" class="h-full w-0 bg-accent"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+  <nav class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-10" aria-label="Main">
+    <a href="#top" class="logo text-[1.0625rem]" aria-label="Astrion Studio — home">
+      <span class="logo-row"><svg class="logo-mark" viewBox="0 0 120 100" fill="none" aria-hidden="true"><path d="M0 100 L68 0 L120 0 L120 100 L94 100 L94 30 L30 100 Z" fill="currentColor"/></svg><span class="logo-word">STRION</span></span>
+      <span class="logo-sub">STUDIO</span>
+    </a>
+
+    <ul class="hidden items-center gap-9 md:flex">
+      <li><a href="#spaces"   class="nav-link">Spaces</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#process"  class="nav-link">How it works</a></li>
+      <li><a href="#studio"   class="nav-link">Studio</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="#book" class="btn btn-primary btn-sm hidden sm:inline-flex">Check availability</a>
+      <button id="menu-btn" type="button" class="cursor-pointer rounded-full border border-border p-2.5 text-foreground transition-colors duration-200 hover:bg-muted md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" hidden class="border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden">
+    <ul class="mx-auto flex max-w-[1400px] flex-col px-6 py-2">
+      <li><a href="#spaces"   class="mobile-link">Spaces</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#process"  class="mobile-link">How it works</a></li>
+      <li><a href="#studio"   class="mobile-link">Studio</a></li>
+      <li class="py-4"><a href="#book" class="btn btn-primary w-full">Check availability</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="grain relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-32 sm:pb-24">
+  <div class="absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/img/hero-cyclorama.jpg')"></div>
+    <!-- Legibility scrims: the headline sits over the lower third -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/25"></div>
+    <div class="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background to-transparent"></div>
+  </div>
+
+  <div class="mx-auto w-full max-w-[1400px] px-6 lg:px-10">
+    <p class="reveal eyebrow mb-8">Surandai, Tamil Nadu &mdash; open 7 days</p>
+
+    <h1 class="reveal font-display text-[clamp(2.75rem,10vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.045em]" style="--reveal-delay:80ms">
+      Your studio,<br>
+      <span class="text-muted-foreground">by the hour.</span>
+    </h1>
+
+    <div class="mt-12 flex flex-col gap-10 border-t border-border/40 pt-10 lg:flex-row lg:items-end lg:justify-between">
+      <p class="reveal max-w-md text-lg leading-relaxed text-muted-foreground" style="--reveal-delay:160ms">
+        A 1,600 sq ft cyclorama wall and two podcast rooms, on one floor in Surandai. Book the space and bring your idea &mdash; lights, backdrops and mics are already here.
+      </p>
+
+      <div class="reveal flex flex-wrap items-center gap-3" style="--reveal-delay:240ms">
+        <a href="#book" class="btn btn-primary group">
+          <svg class="h-4 w-4 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3M16 3v3M4 9h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+          Check availability
+        </a>
+        <button type="button" id="reel-btn" class="btn btn-secondary">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11.14-6.86a1 1 0 0 0 0-1.72L9.52 4.28A1 1 0 0 0 8 5.14Z"/></svg>
+          Take the tour
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 lg:block" aria-hidden="true">
+    <svg class="h-6 w-6 animate-bounce text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ============ CAPABILITY MARQUEE ============ -->
+<section class="overflow-hidden border-y border-border/40 bg-muted/40 py-5" aria-label="What the studio offers">
+  <div class="flex w-max">
+    <div class="marquee-track flex shrink-0 items-center">
+      <span class="marquee-item">1,600 sq ft Cyc Wall</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Two Podcast Rooms</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Personal Branding</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Product Photography</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Portraits &amp; Headshots</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Reels &amp; Short Form</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Livestream Ready</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Hourly Rental</span><span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-track flex shrink-0 items-center" aria-hidden="true">
+      <span class="marquee-item">1,600 sq ft Cyc Wall</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Two Podcast Rooms</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Personal Branding</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Product Photography</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Portraits &amp; Headshots</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Reels &amp; Short Form</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Livestream Ready</span><span class="marquee-dot"></span>
+      <span class="marquee-item">Hourly Rental</span><span class="marquee-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPACES ============ -->
+<section id="spaces" class="scroll-mt-24 px-6 py-24 sm:py-32 lg:px-10">
+  <div class="mx-auto max-w-[1400px]">
+    <div class="mb-14 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <p class="reveal eyebrow mb-5">The spaces</p>
+        <h2 class="reveal section-title" style="--reveal-delay:60ms">
+          One cyc wall.<br>Two podcast rooms.
+        </h2>
+      </div>
+      <p class="reveal max-w-sm text-base leading-relaxed text-muted-foreground lg:text-right" style="--reveal-delay:120ms">
+        All three rooms sit on the same floor, so a shoot and a recording can run back to back without moving a case.
+      </p>
+    </div>
+
+    <div id="work-grid" class="grid auto-rows-[13rem] grid-cols-1 gap-4 [grid-auto-flow:dense] sm:auto-rows-[14rem] sm:grid-cols-2 lg:auto-rows-[16.5rem] lg:grid-cols-3">
+
+      <article class="work-item reveal sm:col-span-2 sm:row-span-2" data-category="photo">
+        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-cyclorama.jpg')">
+          <span class="work-scrim"></span>
+          <span class="work-tag">Studio A &middot; 1,600 sq ft</span>
+          <span class="work-meta">
+            <span class="work-title">The Cyclorama Studio</span>
+            <span class="work-client">Seamless infinity wall &middot; stills, video &amp; product</span>
+          </span>
+        </a>
+      </article>
+
+      <article class="work-item reveal" data-category="podcast" style="--reveal-delay:60ms">
+        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-podcast.jpg')">
+          <span class="work-scrim"></span>
+          <span class="work-tag">Podcast One &middot; 400 sq ft</span>
+          <span class="work-meta">
+            <span class="work-title">Podcast Room One</span>
+            <span class="work-client">Two seats &middot; solo and interview setups</span>
+          </span>
+        </a>
+      </article>
+
+      <article class="work-item reveal" data-category="podcast" style="--reveal-delay:120ms">
+        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-podcast-b.jpg')">
+          <span class="work-scrim"></span>
+          <span class="work-tag">Podcast Two &middot; 400 sq ft</span>
+          <span class="work-meta">
+            <span class="work-title">Podcast Room Two</span>
+            <span class="work-client">Four seats &middot; panel and roundtable</span>
+          </span>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
+  <div class="mx-auto max-w-[1400px]">
+    <div class="mb-16 max-w-2xl">
+      <p class="reveal eyebrow mb-5">What you can book</p>
+      <h2 class="reveal section-title" style="--reveal-delay:60ms">
+        Just the space,<br>or the whole crew.
+      </h2>
+      <p class="reveal mt-6 text-lg leading-relaxed text-muted-foreground" style="--reveal-delay:120ms">
+        Some people want an empty room and four hours of quiet. Some want to walk in, sit down, and walk out with a month of content. Both are fine.
+      </p>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      <article class="card reveal p-8">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2a1 1 0 0 0 .84-.46l.92-1.42A1 1 0 0 1 9.3 4.7h5.4a1 1 0 0 1 .84.42l.92 1.42A1 1 0 0 0 17.3 7h2.2A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5Z"/><circle cx="12" cy="12.75" r="3.5"/></svg>
+        </span>
+        <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">Studio Rental</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Book the cyc wall or either podcast room by the hour, half day or full day. Strobes, modifiers, stands and mics are included &mdash; you bring the camera.</p>
+        <ul class="service-list">
+          <li>Hourly, half-day and full-day slots</li>
+          <li>Strobes, modifiers and C-stands included</li>
+          <li>Paper and canvas backdrops</li>
+          <li>Parking and ground-floor loading</li>
+        </ul>
+        <p class="service-price">Rates on request<span> &mdash; ask for the rate card</span></p>
+      </article>
+
+      <article class="card reveal p-8" style="--reveal-delay:80ms">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+        </span>
+        <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">Personal Branding</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">A half day on the cyc wall that gives you a quarter of content. Headshots, talking-head video, vertical reels and B-roll &mdash; shot, cut and handed over.</p>
+        <ul class="service-list">
+          <li>Headshots &amp; portrait sets</li>
+          <li>Talking head with teleprompter</li>
+          <li>Vertical reels for social</li>
+          <li>Hair, makeup and styling on request</li>
+        </ul>
+        <p class="service-price">Rates on request<span> &mdash; half and full day</span></p>
+      </article>
+
+      <article class="card reveal p-8" style="--reveal-delay:160ms">
+        <span class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/></svg>
+        </span>
+        <h3 class="mt-7 font-display text-2xl font-semibold tracking-tight">Podcast Production</h3>
+        <p class="mt-3 leading-relaxed text-muted-foreground">Two rooms, up to four mics, one operator. Walk in with your guests, walk out with a recorded episode and the clips already pulled.</p>
+        <ul class="service-list">
+          <li>Two seats in Room One, four in Room Two</li>
+          <li>Broadcast mics, isolated tracks</li>
+          <li>Audio clean-up and mix</li>
+          <li>Short-form clips cut from the episode</li>
+        </ul>
+        <p class="service-price">Rates on request<span> &mdash; per hour or per episode</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
+  <div class="mx-auto max-w-[1400px]">
+    <div class="mb-16 max-w-2xl">
+      <p class="reveal eyebrow mb-5">How it works</p>
+      <h2 class="reveal section-title" style="--reveal-delay:60ms">
+        Book it in<br>four steps.
+      </h2>
+    </div>
+
+    <ol class="grid gap-px overflow-hidden rounded-xl border border-border/50 bg-border/50 sm:grid-cols-2 lg:grid-cols-4">
+      <li class="process-step reveal">
+        <span class="process-num">01</span>
+        <h3 class="process-title">Pick a room</h3>
+        <p class="process-copy">Tell us the room, the date and how many hours. We hold the slot for 24 hours while you decide.</p>
+      </li>
+      <li class="process-step reveal" style="--reveal-delay:80ms">
+        <span class="process-num">02</span>
+        <h3 class="process-title">Lock the slot</h3>
+        <p class="process-copy">Half up front confirms the booking. Reschedule free up to 48 hours before your call time.</p>
+      </li>
+      <li class="process-step reveal" style="--reveal-delay:160ms">
+        <span class="process-num">03</span>
+        <h3 class="process-title">Shoot day</h3>
+        <p class="process-copy">Doors open 30 minutes before your slot for setup, free of charge. A studio assistant is on site all day.</p>
+      </li>
+      <li class="process-step reveal" style="--reveal-delay:240ms">
+        <span class="process-num">04</span>
+        <h3 class="process-title">Files in 48h</h3>
+        <p class="process-copy">Booked production too? Selects land the next morning, the full edit within two working days.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ STUDIO / STATS ============ -->
+<section id="studio" class="grain relative scroll-mt-24 overflow-hidden border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(90%_70%_at_82%_10%,rgba(30,58,95,0.42)_0%,transparent_60%)]" aria-hidden="true"></div>
+
+  <div class="mx-auto max-w-[1400px]">
+    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <p class="reveal eyebrow mb-5">The studio</p>
+        <h2 class="reveal section-title" style="--reveal-delay:60ms">
+          A proper studio,<br>close to home.
+        </h2>
+        <div class="reveal mt-7 space-y-5 text-lg leading-relaxed text-muted-foreground" style="--reveal-delay:120ms">
+          <p>Astrion exists because getting to a real cyc wall used to mean a day of travel and a night away. So we built one here in Surandai &mdash; 1,600 square feet of seamless wall, high enough to fly a light properly.</p>
+          <p>Next to it are two treated podcast rooms: one for a host and a guest, one for a four-person table. Everything is on one floor, everything is on wheels, and someone is always on site.</p>
+        </div>
+        <a href="#book" class="reveal btn btn-secondary mt-9" style="--reveal-delay:180ms">
+          Come see it
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-px self-start overflow-hidden rounded-xl border border-border/50 bg-border/50">
+        <div class="stat reveal"><span class="stat-num">1,600<span class="text-muted-foreground"> sq ft</span></span><span class="stat-label">Cyclorama studio</span></div>
+        <div class="stat reveal" style="--reveal-delay:70ms"><span class="stat-num">2<span class="text-muted-foreground"> &times; 400</span></span><span class="stat-label">Podcast rooms, sq ft</span></div>
+        <div class="stat reveal" style="--reveal-delay:140ms"><span class="stat-num">7</span><span class="stat-label">Days a week</span></div>
+        <div class="stat reveal" style="--reveal-delay:210ms"><span class="stat-num">48<span class="text-muted-foreground">h</span></span><span class="stat-label">Edit turnaround</span></div>
+      </div>
+    </div>
+
+    <!-- Testimonial slot. The previous quote here was written as placeholder
+         copy and attributed to an invented person, so it was removed before
+         going live. Drop a real customer quote in and uncomment:
+
+    <figure class="reveal mt-20 border-t border-border/40 pt-14">
+      <blockquote class="max-w-4xl text-balance font-display text-[clamp(1.375rem,3.2vw,2.25rem)] font-medium leading-[1.3] tracking-[-0.02em]">
+        &ldquo;I booked four hours for headshots and ended up recording three podcast episodes in the room next door the same afternoon. I now block a day here every month.&rdquo;
+      </blockquote>
+      <figcaption class="mt-7 flex items-center gap-4">
+        <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-muted font-display text-sm font-semibold text-muted-foreground" aria-hidden="true">MR</span>
+        <span class="text-sm leading-snug">
+          <span class="block font-display font-semibold">Meera Raghunathan</span>
+          <span class="block text-muted-foreground">Founder, Ledgerwise</span>
+        </span>
+      </figcaption>
+    </figure>
+    -->
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section id="book" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
+  <div class="mx-auto max-w-[1400px]">
+    <div class="grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-24">
+      <div>
+        <p class="reveal eyebrow mb-5">Check availability</p>
+        <h2 class="reveal section-title" style="--reveal-delay:60ms">
+          Tell us when<br>you need it.
+        </h2>
+        <p class="reveal mt-6 max-w-md text-lg leading-relaxed text-muted-foreground" style="--reveal-delay:120ms">
+          Send the date and the room. We come back the same day with a slot and a quote &mdash; and we hold it for 24 hours.
+        </p>
+
+        <dl class="reveal mt-10 space-y-6" style="--reveal-delay:180ms">
+          <div>
+            <dt class="contact-label">Bookings</dt>
+            <dd class="mt-1.5"><a href="mailto:astrionarchitect@gmail.com" class="contact-value">astrionarchitect@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt class="contact-label">Studio</dt>
+            <dd class="mt-1.5 text-lg leading-relaxed">Surandai, Tenkasi District<br>Tamil Nadu</dd>
+          </div>
+          <!-- Phone/WhatsApp intentionally omitted: no real number supplied yet.
+               Restore as:
+               <div>
+                 <dt class="contact-label">Phone &amp; WhatsApp</dt>
+                 <dd class="mt-1.5"><a href="tel:+91XXXXXXXXXX" class="contact-value">+91 XXXXX XXXXX</a></dd>
+               </div> -->
+          <div>
+            <dt class="contact-label">Hours</dt>
+            <dd class="mt-1.5 text-lg leading-relaxed">Mon&ndash;Sun, 7:00 &ndash; 22:00<br><span class="text-muted-foreground">Late slots on request</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <form id="contact-form" class="reveal card p-7 sm:p-9" style="--reveal-delay:100ms" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="f-name" class="form-label">Name</label>
+            <input id="f-name" name="name" type="text" class="input" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div>
+            <label for="f-email" class="form-label">Email</label>
+            <input id="f-email" name="email" type="email" class="input" placeholder="you@company.com" required autocomplete="email">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-type" class="form-label">Which space</label>
+            <select id="f-type" name="space" class="input cursor-pointer" required>
+              <option value="">Select a room&hellip;</option>
+              <option>Studio A &mdash; Cyclorama (1,600 sq ft)</option>
+              <option>Podcast Room One &mdash; 2 seats</option>
+              <option>Podcast Room Two &mdash; 4 seats</option>
+              <option>Not sure &mdash; help me pick</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-date" class="form-label">Preferred date</label>
+            <input id="f-date" name="date" type="date" class="input cursor-pointer" required>
+          </div>
+          <div>
+            <label for="f-hours" class="form-label">How long</label>
+            <select id="f-hours" name="hours" class="input cursor-pointer">
+              <option>2 hours</option>
+              <option>4 hours (half day)</option>
+              <option>8 hours (full day)</option>
+              <option>Multiple days</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-brief" class="form-label">What are you shooting</label>
+            <textarea id="f-brief" name="brief" rows="4" class="input resize-y" placeholder="Product stills, a podcast pilot, headshots for the team&hellip; and anything you need us to bring." required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-7 w-full">
+          Request this slot
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <p id="form-status" class="mt-4 min-h-[1.25rem] text-center text-sm text-muted-foreground" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-border/40 px-6 pb-10 pt-16 lg:px-10">
+  <div class="mx-auto max-w-[1400px]">
+    <div class="flex flex-col gap-10 border-b border-border/40 pb-12 md:flex-row md:items-start md:justify-between">
+      <div class="max-w-xs">
+        <div class="logo text-[1.0625rem] !items-start">
+          <span class="logo-row"><svg class="logo-mark" viewBox="0 0 120 100" fill="none" aria-hidden="true"><path d="M0 100 L68 0 L120 0 L120 100 L94 100 L94 30 L30 100 Z" fill="currentColor"/></svg><span class="logo-word">STRION</span></span>
+          <span class="logo-sub">STUDIO</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Cyclorama studio and podcast rooms for hire. Surandai, Tenkasi District, Tamil Nadu.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10 sm:grid-cols-3">
+        <div>
+          <h2 class="footer-head">Spaces</h2>
+          <ul class="footer-list">
+            <li><a href="#spaces" class="footer-link">Cyclorama Studio</a></li>
+            <li><a href="#spaces" class="footer-link">Podcast Room One</a></li>
+            <li><a href="#spaces" class="footer-link">Podcast Room Two</a></li>
+            <li><a href="#book" class="footer-link">Check availability</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-head">Services</h2>
+          <ul class="footer-list">
+            <li><a href="#services" class="footer-link">Studio rental</a></li>
+            <li><a href="#services" class="footer-link">Personal branding</a></li>
+            <li><a href="#services" class="footer-link">Podcast production</a></li>
+            <li><a href="#process" class="footer-link">How it works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-head">Elsewhere</h2>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Instagram</a></li>
+            <li><a href="#" class="footer-link">YouTube</a></li>
+            <li><a href="#" class="footer-link">Google Maps</a></li>
+            <li><a href="#" class="footer-link">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-3 pt-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2026 Astrion Studio. All rights reserved.</p>
+      <p>Surandai, Tamil Nadu — <span id="clock">--:--:--</span> IST</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ TOUR MODAL ============ -->
+<div id="reel-modal" hidden class="fixed inset-0 z-[80] grid place-items-center p-5">
+  <div id="reel-overlay" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+  <div role="dialog" aria-modal="true" aria-labelledby="reel-title" class="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+    <div class="flex items-center justify-between border-b border-border/60 px-5 py-4">
+      <h2 id="reel-title" class="font-display text-sm font-semibold tracking-tight">Astrion Studio — walkthrough</h2>
+      <button type="button" id="reel-close" class="cursor-pointer rounded-full p-2 text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-foreground" aria-label="Close walkthrough">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="grain relative grid aspect-video place-items-center bg-cover bg-center" style="background-image:url('assets/img/space-cyclorama.jpg')">
+      <div class="absolute inset-0 bg-black/65"></div>
+      <p class="relative px-6 text-center font-display text-sm text-white/85">
+        Drop the studio walkthrough here — replace this panel with a
+        <code class="rounded bg-black/40 px-1.5 py-0.5">&lt;video&gt;</code> or YouTube embed.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

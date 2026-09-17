@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import "./components.css";
+
+/* ============================================================
+   Astrion Studio — design tokens
+   Generated from design-system/astrion-studio/MASTER.md
+   Style: Motion-Driven · Pattern: Scroll-Triggered Storytelling
+   ============================================================ */
+
+@theme {
+  /* Color roles */
+  --color-primary: #18181b;
+  --color-on-primary: #ffffff;
+  --color-secondary: #27272a;
+  --color-on-secondary: #ffffff;
+  /* Brand amber, taken from the Astrion Studio wordmark. This replaces the
+     near-white accent the generated design system started from. */
+  --color-brand: #f9a31b;
+  --color-accent: #f9a31b;
+  --color-on-accent: #0a0a0a;
+  --color-background: #000000;
+  --color-foreground: #fafafa;
+  --color-card: #0c0c0c;
+  --color-card-foreground: #fafafa;
+  --color-muted: #181818;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #3f3f46;
+  --color-destructive: #ef4444;
+  --color-on-destructive: #000000;
+  --color-ring: #f9a31b;
+
+  /* Typography */
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* NOTE: the spacing scale is deliberately NOT declared in the --spacing-*
+     namespace. Naming keys xs/sm/md/lg/xl there would hijack Tailwind's own
+     named scales (max-w-md would become 1rem, max-w-xs 0.25rem). The scale
+     lives on :root below as --space-* instead. */
+
+  /* Shadow depths */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px rgb(0 0 0 / 0.15);
+}
+
+/* Spacing scale from MASTER.md — plain custom properties, no Tailwind
+   namespace collision. Use as var(--space-lg) in component CSS. */
+:root {
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+}
+
+/* ---------- Base ---------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible focus for keyboard nav — never remove */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  /* Dark, minimal scrollbar to match the pure-black canvas */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-background); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 999px;
+    border: 2px solid var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+}
+
+/* ---------- Components ---------- */
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: background-color 220ms ease, color 220ms ease,
+                border-color 220ms ease, opacity 220ms ease,
+                transform 220ms ease;
+    will-change: transform;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+  .btn-primary:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-foreground);
+    background: var(--color-muted);
+    transform: translateY(-1px);
+  }
+
+  .card {
+    background: var(--color-card);
+    border: 1px solid color-mix(in oklab, var(--color-border) 45%, transparent);
+    border-radius: 0.75rem;
+    transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+  }
+  .card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    color: var(--color-foreground);
+    background: var(--color-muted);
+    border: 1px solid color-mix(in oklab, var(--color-border) 60%, transparent);
+    border-radius: 0.625rem;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .input::placeholder { color: var(--color-muted-foreground); }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-foreground);
+    box-shadow: 0 0 0 3px rgb(255 255 255 / 0.12);
+  }
+
+  /* Eyebrow label used above every section heading */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: var(--color-border);
+  }
+}
+
+/* ---------- Scroll-reveal (Intersection Observer driven) ---------- */
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Film-grain overlay — gives the pure black canvas texture */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- Reduced motion: render every chapter in its final state ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

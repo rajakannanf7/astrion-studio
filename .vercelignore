@@ -1,0 +1,8 @@
+# Excluded from the deployment upload.
+# NOTE: assets/css/tailwind.css and components.css are NOT listed here —
+# `npm run build` reads them to produce styles.css, so they must be uploaded.
+node_modules
+.claude
+design-system
+assets/img/_unused
+README.md

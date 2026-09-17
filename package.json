@@ -1,0 +1,19 @@
+{
+  "name": "astrion-studio",
+  "version": "1.0.0",
+  "description": "Astrion Studio - film, photography and post-production studio website",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css --minify",
+    "dev": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css --watch",
+    "serve": "npx --yes serve . -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "private": true
+}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Astrion Studio - film, photography and post-production studio website",
   "scripts": {
-    "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css --minify",
+    "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css --minify && node scripts/stamp-assets.cjs",
     "dev": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css --watch",
     "serve": "npx --yes serve . -l 3000"
   },

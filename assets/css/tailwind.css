@@ -65,6 +65,13 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Large displays: scale the whole layout (type, spacing, container, tiles)
+     rather than stretching lines of text across the screen. Everything is
+     rem-based, so this one knob keeps proportions identical. */
+  @media (min-width: 1800px) { html { font-size: 17px; } }
+  @media (min-width: 2200px) { html { font-size: 18.5px; } }
+  @media (min-width: 2800px) { html { font-size: 20px; } }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);

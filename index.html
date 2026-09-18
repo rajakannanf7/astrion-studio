@@ -21,11 +21,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600&text=ASTRIONUD&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=mu6vphlb">
+<link rel="stylesheet" href="assets/css/styles.css?v=mu71afp2">
 <link rel="preload" as="image" href="assets/img/hero-cyclorama.jpg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 128'%3E%3Crect width='140' height='128' fill='%23000'/%3E%3Cpath d='M10 114 L78 14 L130 14 L130 114 L104 114 L104 44 L40 114 Z' fill='%23F9A31B'/%3E%3C/svg%3E">
 </head>
 <body class="antialiased">
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
 
 <a href="#spaces" class="skip-link">Skip to content</a>
 
@@ -73,7 +76,7 @@
 <!-- ============ HERO ============ -->
 <section class="grain relative flex min-h-[88svh] items-end overflow-hidden pb-14 pt-32 sm:pb-20">
   <div class="absolute inset-0 -z-10" aria-hidden="true">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/img/hero-cyclorama.jpg')"></div>
+    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/img/hero-cyclorama.jpg')"></div>
     <!-- Legibility scrims: the headline sits over the lower third -->
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/25"></div>
     <div class="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background to-transparent"></div>
@@ -154,7 +157,8 @@
     <div id="work-grid" class="grid auto-rows-[13rem] grid-cols-1 gap-4 [grid-auto-flow:dense] sm:auto-rows-[14rem] sm:grid-cols-2 lg:auto-rows-[16.5rem] lg:grid-cols-3 xl:auto-rows-[19rem]">
 
       <article class="work-item reveal sm:col-span-2 sm:row-span-2" data-category="photo">
-        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-cyclorama.jpg')">
+        <a href="#book" class="group work-card grain" data-cursor="Book">
+          <span class="work-bg" style="background-image:url('assets/img/space-cyclorama.jpg')" aria-hidden="true"></span>
           <span class="work-scrim"></span>
           <span class="work-tag">Studio A &middot; 1,600 sq ft</span>
           <span class="work-meta">
@@ -165,7 +169,8 @@
       </article>
 
       <article class="work-item reveal" data-category="podcast" style="--reveal-delay:60ms">
-        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-podcast.jpg')">
+        <a href="#book" class="group work-card grain" data-cursor="Book">
+          <span class="work-bg" style="background-image:url('assets/img/space-podcast.jpg')" aria-hidden="true"></span>
           <span class="work-scrim"></span>
           <span class="work-tag">Podcast One &middot; 400 sq ft</span>
           <span class="work-meta">
@@ -176,7 +181,8 @@
       </article>
 
       <article class="work-item reveal" data-category="podcast" style="--reveal-delay:120ms">
-        <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-podcast-b.jpg')">
+        <a href="#book" class="group work-card grain" data-cursor="Book">
+          <span class="work-bg" style="background-image:url('assets/img/space-podcast-b.jpg')" aria-hidden="true"></span>
           <span class="work-scrim"></span>
           <span class="work-tag">Podcast Two &middot; 400 sq ft</span>
           <span class="work-meta">
@@ -500,6 +506,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=mu6vphlb" defer></script>
+<script src="assets/js/main.js?v=mu71afp2" defer></script>
 </body>
 </html>

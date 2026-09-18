@@ -427,3 +427,113 @@
   .marquee-track { animation: none !important; }
   #progress { transition: none !important; }
 }
+
+/* ============================================================
+   Motion layer: parallax + custom cursor
+   JS (initParallax / initCursor) only switches these on for
+   fine pointers without prefers-reduced-motion.
+   ============================================================ */
+
+/* ---- Parallax ---- */
+
+/* Hero photo is taller than its frame so it can travel without gaps */
+#hero-bg {
+  inset: -12% 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.06);
+}
+
+/* Tile photo lives on its own layer inside the card */
+.work-bg {
+  position: absolute;
+  inset: -14% 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: translate3d(0, var(--py, 0px), 0);
+}
+/* hover zoom sits on `scale`, separate from the parallax `transform` */
+.work-bg { transition: scale 800ms cubic-bezier(0.22, 1, 0.36, 1); }
+.group:hover .work-bg { scale: 1.05; }
+
+/* ---- Custom cursor ---- */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 95;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 9999px;
+  translate: -50% -50%;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-brand);
+}
+
+.cursor-ring {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1),
+              height 320ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 320ms ease, border-color 320ms ease,
+              opacity 250ms ease;
+}
+
+.cursor-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-on-accent);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+html.has-cursor .cursor-dot,
+html.has-cursor .cursor-ring { opacity: 1; }
+html.has-cursor.cursor-hidden .cursor-dot,
+html.has-cursor.cursor-hidden .cursor-ring { opacity: 0; }
+
+/* over links and buttons */
+html.cursor-hover .cursor-ring {
+  width: 56px;
+  height: 56px;
+  border-color: var(--color-brand);
+  background: color-mix(in oklab, var(--color-brand) 14%, transparent);
+}
+html.cursor-hover .cursor-dot { opacity: 0 !important; }
+
+/* over a room photo: solid amber disc with a label */
+html.cursor-label-on .cursor-ring {
+  width: 84px;
+  height: 84px;
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+}
+html.cursor-label-on .cursor-label { opacity: 1; }
+
+/* pressed */
+html.cursor-down .cursor-ring { width: 28px; height: 28px; }
+
+/* Native cursor hidden only once the custom one is live.
+   Text fields keep the I-beam so typing still feels normal. */
+html.has-cursor,
+html.has-cursor * { cursor: none !important; }
+html.has-cursor input,
+html.has-cursor textarea { cursor: text !important; }
+html.has-cursor select { cursor: pointer !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-bg, .work-bg { transform: none !important; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+}

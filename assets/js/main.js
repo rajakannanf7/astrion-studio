@@ -214,6 +214,119 @@
     setInterval(tick, 1000);
   }
 
+  /* ---------- Parallax (hero photo + room tiles) ---------- */
+
+  function initParallax() {
+    if (reduceMotion.matches) return;
+
+    var hero = document.getElementById('hero-bg');
+    var heroSection = hero ? hero.closest('section') : null;
+    var tiles = Array.prototype.slice.call(document.querySelectorAll('.work-bg'));
+    var visible = new Set();
+    var ticking = false;
+
+    // Only drive tiles that are on screen
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
+        });
+        request();
+      }, { rootMargin: '10% 0px' });
+      tiles.forEach(function (t) { io.observe(t.parentElement); });
+    }
+
+    function frame() {
+      ticking = false;
+      var y = window.scrollY;
+      var vh = window.innerHeight;
+
+      // Hero: photo moves at ~35% of scroll speed and eases in slightly
+      if (hero && heroSection && y < heroSection.offsetHeight) {
+        var p = y / heroSection.offsetHeight;
+        hero.style.transform =
+          'translate3d(0,' + (y * 0.35).toFixed(1) + 'px,0) scale(' + (1.06 + p * 0.06).toFixed(4) + ')';
+      }
+
+      // Tiles: drift up to ~7% of their height against the scroll
+      visible.forEach(function (card) {
+        var bg = card.querySelector('.work-bg');
+        var r = card.getBoundingClientRect();
+        var t = (r.top + r.height / 2 - vh / 2) / vh;          // -1 .. 1 across the screen
+        bg.style.setProperty('--py', (t * r.height * -0.14).toFixed(1) + 'px');
+      });
+    }
+
+    function request() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(frame);
+    }
+
+    window.addEventListener('scroll', request, { passive: true });
+    window.addEventListener('resize', request);
+    request();
+  }
+
+  /* ---------- Custom cursor (mouse / trackpad only) ---------- */
+
+  function initCursor() {
+    var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+    if (!fine.matches || reduceMotion.matches) return;
+
+    var root = document.documentElement;
+    var dot = document.querySelector('.cursor-dot');
+    var ring = document.querySelector('.cursor-ring');
+    var label = document.querySelector('.cursor-label');
+    if (!dot || !ring) return;
+
+    var mx = -100, my = -100;   // pointer
+    var rx = -100, ry = -100;   // ring (trails behind)
+    var started = false;
+
+    var HOVER = 'a, button, [role="button"], label, .filter-btn';
+    var FIELDS = 'input, textarea, select';
+
+    function loop() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+      ring.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0)';
+      window.requestAnimationFrame(loop);
+    }
+
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!started) {
+        started = true;
+        rx = mx; ry = my;
+        root.classList.add('has-cursor');   // hide native cursor only once ours is visible
+        window.requestAnimationFrame(loop);
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseover', function (e) {
+      var el = e.target;
+      var labelled = el.closest('[data-cursor]');
+      var field = el.closest(FIELDS);
+
+      root.classList.toggle('cursor-hidden', !!field);   // native I-beam takes over in fields
+      root.classList.toggle('cursor-label-on', !!labelled);
+      root.classList.toggle('cursor-hover', !labelled && !field && !!el.closest(HOVER));
+      if (labelled) label.textContent = labelled.getAttribute('data-cursor');
+    });
+
+    document.addEventListener('mousedown', function () { root.classList.add('cursor-down'); });
+    document.addEventListener('mouseup', function () { root.classList.remove('cursor-down'); });
+    document.documentElement.addEventListener('mouseleave', function () { root.classList.add('cursor-hidden'); });
+    document.documentElement.addEventListener('mouseenter', function () { root.classList.remove('cursor-hidden'); });
+
+    // If the user switches to touch mid-session, give the native cursor back
+    fine.addEventListener('change', function (e) {
+      if (!e.matches) root.classList.remove('has-cursor');
+    });
+  }
+
   /* ---------- Boot ---------- */
 
   function boot() {
@@ -224,6 +337,8 @@
     initReel();
     initForm();
     initClock();
+    initParallax();
+    initCursor();
   }
 
   if (document.readyState === 'loading') {

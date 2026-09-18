@@ -229,7 +229,6 @@
     // tx/ty = where the pointer is (-1..1), cx/cy = eased value we render.
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var fg = document.getElementById('hero-fg');
-    var light = document.getElementById('hero-light');
     var tx = 0, ty = 0, cx = 0, cy = 0, easing = false;
 
     function paintHero(y) {
@@ -241,10 +240,6 @@
         ' scale(' + (1.08 + p * 0.06).toFixed(4) + ')';
       // near layer: headline drifts WITH the pointer, so it floats in front
       if (fg) fg.style.transform = 'translate3d(' + (cx * 12).toFixed(1) + 'px,' + (cy * 8).toFixed(1) + 'px,0)';
-      if (light) {
-        light.style.setProperty('--lx', ((cx + 1) * 50).toFixed(1) + '%');
-        light.style.setProperty('--ly', ((cy + 1) * 50).toFixed(1) + '%');
-      }
     }
 
     function ease() {
@@ -270,13 +265,11 @@
         var r = heroSection.getBoundingClientRect();
         tx = ((e.clientX - r.left) / r.width) * 2 - 1;
         ty = ((e.clientY - r.top) / r.height) * 2 - 1;
-        document.documentElement.classList.add('hero-live');
         kick();
       }, { passive: true });
 
       heroSection.addEventListener('mouseleave', function () {
         tx = 0; ty = 0;                                  // glide back to centre
-        document.documentElement.classList.remove('hero-live');
         kick();
       });
     }

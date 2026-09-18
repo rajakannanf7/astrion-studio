@@ -335,7 +335,9 @@
   .stat {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;   /* anchor figures to the bottom when the panel stretches */
     gap: 0.5rem;
+    min-height: 9rem;
     background: var(--color-background);
     padding: 2rem 1.75rem;
   }

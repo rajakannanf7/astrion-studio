@@ -36,7 +36,7 @@
 
 <!-- ============ NAV ============ -->
 <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
-  <nav class="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-10" aria-label="Main">
+  <nav class="mx-auto flex max-w-[1560px] items-center justify-between px-6 py-5 lg:px-12 2xl:px-16" aria-label="Main">
     <a href="#top" class="logo text-[1.0625rem]" aria-label="Astrion Studio — home">
       <span class="logo-row"><svg class="logo-mark" viewBox="0 0 120 100" fill="none" aria-hidden="true"><path d="M0 100 L68 0 L120 0 L120 100 L94 100 L94 30 L30 100 Z" fill="currentColor"/></svg><span class="logo-word">STRION</span></span>
       <span class="logo-sub">STUDIO</span>
@@ -58,7 +58,7 @@
   </nav>
 
   <div id="mobile-menu" hidden class="border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden">
-    <ul class="mx-auto flex max-w-[1400px] flex-col px-6 py-2">
+    <ul class="mx-auto flex max-w-[1560px] flex-col px-6 py-2">
       <li><a href="#spaces"   class="mobile-link">Spaces</a></li>
       <li><a href="#services" class="mobile-link">Services</a></li>
       <li><a href="#process"  class="mobile-link">How it works</a></li>
@@ -71,7 +71,7 @@
 <main id="top">
 
 <!-- ============ HERO ============ -->
-<section class="grain relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-32 sm:pb-24">
+<section class="grain relative flex min-h-[88svh] items-end overflow-hidden pb-14 pt-32 sm:pb-20">
   <div class="absolute inset-0 -z-10" aria-hidden="true">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/img/hero-cyclorama.jpg')"></div>
     <!-- Legibility scrims: the headline sits over the lower third -->
@@ -79,7 +79,7 @@
     <div class="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background to-transparent"></div>
   </div>
 
-  <div class="mx-auto w-full max-w-[1400px] px-6 lg:px-10">
+  <div class="mx-auto w-full max-w-[1560px] px-6 lg:px-12 2xl:px-16">
     <p class="reveal eyebrow mb-8">Surandai, Tamil Nadu &mdash; open 7 days</p>
 
     <h1 class="reveal font-display text-[clamp(2.75rem,10vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.045em]" style="--reveal-delay:80ms">
@@ -137,9 +137,9 @@
 </section>
 
 <!-- ============ SPACES ============ -->
-<section id="spaces" class="scroll-mt-24 px-6 py-24 sm:py-32 lg:px-10">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-14 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+<section id="spaces" class="scroll-mt-24 px-6 py-16 sm:py-20 lg:py-24 lg:px-12 2xl:px-16">
+  <div class="mx-auto max-w-[1560px]">
+    <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div>
         <p class="reveal eyebrow mb-5">The spaces</p>
         <h2 class="reveal section-title" style="--reveal-delay:60ms">
@@ -151,7 +151,7 @@
       </p>
     </div>
 
-    <div id="work-grid" class="grid auto-rows-[13rem] grid-cols-1 gap-4 [grid-auto-flow:dense] sm:auto-rows-[14rem] sm:grid-cols-2 lg:auto-rows-[16.5rem] lg:grid-cols-3">
+    <div id="work-grid" class="grid auto-rows-[13rem] grid-cols-1 gap-4 [grid-auto-flow:dense] sm:auto-rows-[14rem] sm:grid-cols-2 lg:auto-rows-[16.5rem] lg:grid-cols-3 xl:auto-rows-[19rem]">
 
       <article class="work-item reveal sm:col-span-2 sm:row-span-2" data-category="photo">
         <a href="#book" class="group work-card grain" style="background-image:url('assets/img/space-cyclorama.jpg')">
@@ -191,14 +191,16 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-16 max-w-2xl">
-      <p class="reveal eyebrow mb-5">What you can book</p>
-      <h2 class="reveal section-title" style="--reveal-delay:60ms">
-        Just the space,<br>or the whole crew.
-      </h2>
-      <p class="reveal mt-6 text-lg leading-relaxed text-muted-foreground" style="--reveal-delay:120ms">
+<section id="services" class="scroll-mt-24 border-t border-border/40 px-6 py-16 sm:py-20 lg:py-24 lg:px-12 2xl:px-16">
+  <div class="mx-auto max-w-[1560px]">
+    <div class="mb-10 grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
+      <div>
+        <p class="reveal eyebrow mb-5">What you can book</p>
+        <h2 class="reveal section-title" style="--reveal-delay:60ms">
+          Just the space,<br>or the whole crew.
+        </h2>
+      </div>
+      <p class="reveal max-w-xl text-lg leading-relaxed text-muted-foreground lg:justify-self-end lg:text-right" style="--reveal-delay:120ms">
         Some people want an empty room and four hours of quiet. Some want to walk in, sit down, and walk out with a month of content. Both are fine.
       </p>
     </div>
@@ -253,13 +255,18 @@
 </section>
 
 <!-- ============ PROCESS ============ -->
-<section id="process" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
-  <div class="mx-auto max-w-[1400px]">
-    <div class="mb-16 max-w-2xl">
-      <p class="reveal eyebrow mb-5">How it works</p>
-      <h2 class="reveal section-title" style="--reveal-delay:60ms">
-        Book it in<br>four steps.
-      </h2>
+<section id="process" class="scroll-mt-24 border-t border-border/40 px-6 py-16 sm:py-20 lg:py-24 lg:px-12 2xl:px-16">
+  <div class="mx-auto max-w-[1560px]">
+    <div class="mb-10 grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
+      <div>
+        <p class="reveal eyebrow mb-5">How it works</p>
+        <h2 class="reveal section-title" style="--reveal-delay:60ms">
+          Book it in<br>four steps.
+        </h2>
+      </div>
+      <p class="reveal max-w-xl text-lg leading-relaxed text-muted-foreground lg:justify-self-end lg:text-right" style="--reveal-delay:120ms">
+        No account, no app. Send the date and the room, and we reply the same day.
+      </p>
     </div>
 
     <ol class="grid gap-px overflow-hidden rounded-xl border border-border/50 bg-border/50 sm:grid-cols-2 lg:grid-cols-4">
@@ -288,11 +295,11 @@
 </section>
 
 <!-- ============ STUDIO / STATS ============ -->
-<section id="studio" class="grain relative scroll-mt-24 overflow-hidden border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
+<section id="studio" class="grain relative scroll-mt-24 overflow-hidden border-t border-border/40 px-6 py-16 sm:py-20 lg:py-24 lg:px-12 2xl:px-16">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(90%_70%_at_82%_10%,rgba(30,58,95,0.42)_0%,transparent_60%)]" aria-hidden="true"></div>
 
-  <div class="mx-auto max-w-[1400px]">
-    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+  <div class="mx-auto max-w-[1560px]">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
       <div>
         <p class="reveal eyebrow mb-5">The studio</p>
         <h2 class="reveal section-title" style="--reveal-delay:60ms">
@@ -308,7 +315,7 @@
         </a>
       </div>
 
-      <div class="grid grid-cols-2 gap-px self-start overflow-hidden rounded-xl border border-border/50 bg-border/50">
+      <div class="grid grid-cols-2 gap-px self-stretch overflow-hidden rounded-xl border border-border/50 bg-border/50">
         <div class="stat reveal"><span class="stat-num">1,600<span class="text-muted-foreground"> sq ft</span></span><span class="stat-label">Cyclorama studio</span></div>
         <div class="stat reveal" style="--reveal-delay:70ms"><span class="stat-num">2<span class="text-muted-foreground"> &times; 400</span></span><span class="stat-label">Podcast rooms, sq ft</span></div>
         <div class="stat reveal" style="--reveal-delay:140ms"><span class="stat-num">7</span><span class="stat-label">Days a week</span></div>
@@ -337,8 +344,8 @@
 </section>
 
 <!-- ============ BOOK ============ -->
-<section id="book" class="scroll-mt-24 border-t border-border/40 px-6 py-24 sm:py-32 lg:px-10">
-  <div class="mx-auto max-w-[1400px]">
+<section id="book" class="scroll-mt-24 border-t border-border/40 px-6 py-16 sm:py-20 lg:py-24 lg:px-12 2xl:px-16">
+  <div class="mx-auto max-w-[1560px]">
     <div class="grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-24">
       <div>
         <p class="reveal eyebrow mb-5">Check availability</p>
@@ -424,8 +431,8 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="border-t border-border/40 px-6 pb-10 pt-16 lg:px-10">
-  <div class="mx-auto max-w-[1400px]">
+<footer class="border-t border-border/40 px-6 pb-10 pt-16 lg:px-12 2xl:px-16">
+  <div class="mx-auto max-w-[1560px]">
     <div class="flex flex-col gap-10 border-b border-border/40 pb-12 md:flex-row md:items-start md:justify-between">
       <div class="max-w-xs">
         <div class="logo text-[1.0625rem] !items-start">

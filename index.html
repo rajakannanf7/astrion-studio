@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600&text=ASTRIONUD&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=mu71afp2">
+<link rel="stylesheet" href="assets/css/styles.css?v=mu73ou9n">
 <link rel="preload" as="image" href="assets/img/hero-cyclorama.jpg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 128'%3E%3Crect width='140' height='128' fill='%23000'/%3E%3Cpath d='M10 114 L78 14 L130 14 L130 114 L104 114 L104 44 L40 114 Z' fill='%23F9A31B'/%3E%3C/svg%3E">
 </head>
@@ -80,9 +80,12 @@
     <!-- Legibility scrims: the headline sits over the lower third -->
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/25"></div>
     <div class="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background to-transparent"></div>
+    <!-- Soft "softbox" light that follows the cursor across the cyc wall.
+         Sits above the scrims so they don't swallow it; text is on a higher layer. -->
+    <div id="hero-light" class="absolute inset-0"></div>
   </div>
 
-  <div class="mx-auto w-full max-w-[97.5rem] px-6 lg:px-12 2xl:px-16">
+  <div id="hero-fg" class="mx-auto w-full max-w-[97.5rem] px-6 lg:px-12 2xl:px-16">
     <p class="reveal eyebrow mb-8">Surandai, Tamil Nadu &mdash; open 7 days</p>
 
     <h1 class="reveal font-display text-[clamp(2.75rem,10vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.045em]" style="--reveal-delay:80ms">
@@ -506,6 +509,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=mu71afp2" defer></script>
+<script src="assets/js/main.js?v=mu73ou9n" defer></script>
 </body>
 </html>

@@ -225,6 +225,62 @@
     var visible = new Set();
     var ticking = false;
 
+    // Pointer-driven depth for the hero (mouse/trackpad only).
+    // tx/ty = where the pointer is (-1..1), cx/cy = eased value we render.
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var fg = document.getElementById('hero-fg');
+    var light = document.getElementById('hero-light');
+    var tx = 0, ty = 0, cx = 0, cy = 0, easing = false;
+
+    function paintHero(y) {
+      var h = heroSection.offsetHeight;
+      var p = Math.min(y / h, 1);
+      // far layer: photo drifts AGAINST the pointer, plus the scroll parallax
+      hero.style.transform =
+        'translate3d(' + (cx * -28).toFixed(1) + 'px,' + (y * 0.35 + cy * -18).toFixed(1) + 'px,0)' +
+        ' scale(' + (1.08 + p * 0.06).toFixed(4) + ')';
+      // near layer: headline drifts WITH the pointer, so it floats in front
+      if (fg) fg.style.transform = 'translate3d(' + (cx * 12).toFixed(1) + 'px,' + (cy * 8).toFixed(1) + 'px,0)';
+      if (light) {
+        light.style.setProperty('--lx', ((cx + 1) * 50).toFixed(1) + '%');
+        light.style.setProperty('--ly', ((cy + 1) * 50).toFixed(1) + '%');
+      }
+    }
+
+    function ease() {
+      cx += (tx - cx) * 0.07;
+      cy += (ty - cy) * 0.07;
+      if (window.scrollY < heroSection.offsetHeight) paintHero(window.scrollY);
+      // keep animating until the layers have settled
+      if (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) {
+        window.requestAnimationFrame(ease);
+      } else {
+        easing = false;
+      }
+    }
+
+    function kick() {
+      if (easing) return;
+      easing = true;
+      window.requestAnimationFrame(ease);
+    }
+
+    if (finePointer && hero && heroSection) {
+      heroSection.addEventListener('mousemove', function (e) {
+        var r = heroSection.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width) * 2 - 1;
+        ty = ((e.clientY - r.top) / r.height) * 2 - 1;
+        document.documentElement.classList.add('hero-live');
+        kick();
+      }, { passive: true });
+
+      heroSection.addEventListener('mouseleave', function () {
+        tx = 0; ty = 0;                                  // glide back to centre
+        document.documentElement.classList.remove('hero-live');
+        kick();
+      });
+    }
+
     // Only drive tiles that are on screen
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
@@ -241,12 +297,7 @@
       var y = window.scrollY;
       var vh = window.innerHeight;
 
-      // Hero: photo moves at ~35% of scroll speed and eases in slightly
-      if (hero && heroSection && y < heroSection.offsetHeight) {
-        var p = y / heroSection.offsetHeight;
-        hero.style.transform =
-          'translate3d(0,' + (y * 0.35).toFixed(1) + 'px,0) scale(' + (1.06 + p * 0.06).toFixed(4) + ')';
-      }
+      if (hero && heroSection && y < heroSection.offsetHeight) paintHero(y);
 
       // Tiles: drift up to ~7% of their height against the scroll
       visible.forEach(function (card) {

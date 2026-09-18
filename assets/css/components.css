@@ -537,3 +537,26 @@ html.has-cursor select { cursor: pointer !important; }
   #hero-bg, .work-bg { transform: none !important; }
   .cursor-dot, .cursor-ring { display: none !important; }
 }
+
+/* ---- Interactive hero (mouse parallax + following light) ---- */
+
+#hero-light {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  background: radial-gradient(
+    34rem 28rem at var(--lx, 50%) var(--ly, 40%),
+    rgb(255 240 214 / 0.22),
+    rgb(249 163 27 / 0.08) 42%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+}
+html.hero-live #hero-light { opacity: 1; }
+
+#hero-fg { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-light { display: none; }
+  #hero-fg { transform: none !important; }
+}
